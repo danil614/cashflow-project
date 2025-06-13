@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}ДДС{% endblock %}
+{% block content %}
+    <h2>Записи ДДС</h2>
+    <form method="get" class="row g-2 mb-3">
+        {{ filterset.form|crispy }}
+        <div class="col-auto">
+            <button class="btn btn-secondary" type="submit">Фильтр</button>
+        </div>
+    </form>
+    <a href="{% url 'records:create' %}" class="btn btn-primary mb-2">+ Новая запись</a>
+    <table class="table table-striped table-bordered">
+        <thead class="table-light">
+        <tr>
+            <th>Дата</th>
+            <th>Статус</th>
+            <th>Тип</th>
+            <th>Категория</th>
+            <th>Подкатегория</th>
+            <th>Сумма</th>
+            <th>Комментарий</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for rec in object_list %}
+            <tr>
+                <td>{{ rec.created_at }}</td>
+                <td>{{ rec.status }}</td>
+                <td>{{ rec.type }}</td>
+                <td>{{ rec.category }}</td>
+                <td>{{ rec.subcategory }}</td>
+                <td class="text-end">{{ rec.amount }} ₽</td>
+                <td>{{ rec.comment }}</td>
+                <td>
+                    <a href="{% url 'records:edit' rec.pk %}" class="btn btn-sm btn-outline-primary">✏️</a>
+                    <a href="{% url 'records:delete' rec.pk %}" class="btn btn-sm btn-outline-danger">🗑</a>
+                </td>
+            </tr>
+        {% empty %}
+            <tr>
+                <td colspan="8" class="text-center">Нет данных</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

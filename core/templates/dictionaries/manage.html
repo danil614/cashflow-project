@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Справочники{% endblock %}
+{% block content %}
+    <h2>Справочники</h2>
+    <p>Для упрощения можно пользоваться <a href="/admin/">админ-панелью</a>.</p>
+    <div class="row">
+        <div class="col-md-3">
+            <h4>Статусы</h4>
+            <ul>{% for s in statuses %}
+                <li>{{ s }}</li>{% endfor %}</ul>
+        </div>
+        <div class="col-md-3">
+            <h4>Типы</h4>
+            <ul>{% for t in types %}
+                <li>{{ t }}</li>{% endfor %}</ul>
+        </div>
+        <div class="col-md-3">
+            <h4>Категории</h4>
+            <ul>{% for c in categories %}
+                <li>{{ c.name }} ({{ c.type }})</li>{% endfor %}</ul>
+        </div>
+        <div class="col-md-3">
+            <h4>Подкатегории</h4>
+            <ul>{% for sc in subcategories %}
+                <li>{{ sc.name }} ({{ sc.category }})</li>{% endfor %}</ul>
+        </div>
+    </div>
+{% endblock %}

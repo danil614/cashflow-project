@@ -1,0 +1,137 @@
+[
+  {
+    "model": "core.status",
+    "pk": 1,
+    "fields": {
+      "name": "Бизнес"
+    }
+  },
+  {
+    "model": "core.status",
+    "pk": 2,
+    "fields": {
+      "name": "Личное"
+    }
+  },
+  {
+    "model": "core.status",
+    "pk": 3,
+    "fields": {
+      "name": "Налог"
+    }
+  },
+  {
+    "model": "core.recordtype",
+    "pk": 1,
+    "fields": {
+      "name": "Пополнение"
+    }
+  },
+  {
+    "model": "core.recordtype",
+    "pk": 2,
+    "fields": {
+      "name": "Списание"
+    }
+  },
+  {
+    "model": "core.category",
+    "pk": 1,
+    "fields": {
+      "type": 2,
+      "name": "Инфраструктура"
+    }
+  },
+  {
+    "model": "core.category",
+    "pk": 2,
+    "fields": {
+      "type": 2,
+      "name": "Маркетинг"
+    }
+  },
+  {
+    "model": "core.subcategory",
+    "pk": 1,
+    "fields": {
+      "category": 1,
+      "name": "VPS"
+    }
+  },
+  {
+    "model": "core.subcategory",
+    "pk": 2,
+    "fields": {
+      "category": 1,
+      "name": "Proxy"
+    }
+  },
+  {
+    "model": "core.subcategory",
+    "pk": 3,
+    "fields": {
+      "category": 2,
+      "name": "Farpost"
+    }
+  },
+  {
+    "model": "core.subcategory",
+    "pk": 4,
+    "fields": {
+      "category": 2,
+      "name": "Avito"
+    }
+  },
+  {
+    "model": "core.cashflowrecord",
+    "pk": 1,
+    "fields": {
+      "created_at": "2025-01-01",
+      "status": 1,
+      "type": 2,
+      "category": 1,
+      "subcategory": 1,
+      "amount": "1500.00",
+      "comment": "Оплата VPS-хостинга"
+    }
+  },
+  {
+    "model": "core.cashflowrecord",
+    "pk": 2,
+    "fields": {
+      "created_at": "2025-01-02",
+      "status": 1,
+      "type": 2,
+      "category": 1,
+      "subcategory": 2,
+      "amount": "300.00",
+      "comment": "Proxy на месяц"
+    }
+  },
+  {
+    "model": "core.cashflowrecord",
+    "pk": 3,
+    "fields": {
+      "created_at": "2025-01-03",
+      "status": 1,
+      "type": 2,
+      "category": 2,
+      "subcategory": 3,
+      "amount": "2000.00",
+      "comment": "Реклама Farpost"
+    }
+  },
+  {
+    "model": "core.cashflowrecord",
+    "pk": 4,
+    "fields": {
+      "created_at": "2025-01-04",
+      "status": 2,
+      "type": 2,
+      "category": 2,
+      "subcategory": 4,
+      "amount": "500.00",
+      "comment": "Личное объявление Avito"
+    }
+  }
+]
